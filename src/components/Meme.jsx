@@ -5,7 +5,7 @@ export function Meme() {
 	const [inputData, setInputData] = React.useState({
 		topText: "",
 		bottomText: "",
-		memeUrl: "https://i.imgflip.com/1ur9b0.jpg",
+		memeUrl: ""
 	});
 
 	const [memeArray, setMemeArray] = React.useState([]);
@@ -19,10 +19,11 @@ export function Meme() {
 	function getRandomMemeImage(){
 		const number = Math.floor(Math.random() * memeArray.length)
 		const imgUrl = memeArray[number].url
+		console.log(imgUrl)
 		setInputData(prevdata => ({
 			...prevdata,
 			memeUrl: imgUrl
-		})
+		}))
 	}
 
 	return (
