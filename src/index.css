@@ -1,0 +1,116 @@
+body {
+	margin: 0;
+	font-family: "Karla", sans-serif;
+	display: flex;
+	justify-content: center;
+}
+
+.App-layout {
+	width: 34.375rem;
+	height: 34.375rem;
+	background-color: #f8f3f3;
+	border: #a526d35a 1.5px inset;
+}
+
+.Meme-div {
+	height: 30.313rem;
+	padding: 1.75rem 2.313rem;
+}
+
+header {
+	width: 34.375rem;
+	height: 4.0625rem;
+}
+
+nav {
+	width: 34.375rem;
+	height: 4.0625rem;
+	background: linear-gradient(90deg, #672280 1.18%, #a626d3 100%);
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.Navbar-trollFaceIcon {
+	width: 1.95663rem;
+	height: 1.63863rem;
+	margin-left: 1.813rem;
+	margin-right: 0.438rem;
+}
+
+.Navbar-header {
+	color: #fff;
+	font-family: Karla;
+	font-size: 1.29675rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: -0.12969rem;
+	margin-right: auto;
+}
+
+.Navbar-title {
+	color: #fff;
+	text-align: right;
+	font-family: Inter;
+	font-size: 0.75rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	margin-right: 1.75rem;
+}
+
+.Meme-form {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-row-gap: 1rem;
+	grid-column-gap: 2rem;
+	margin-bottom: 2rem;
+}
+
+.Meme-left-lebel,
+.Meme-right-lebel {
+	color: var(--gray-700, #374151);
+	font-family: Karla;
+	font-size: 0.875rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.62344rem; /* 116.963% */
+}
+
+.Meme-left-input,
+.Meme-right-input {
+	width: 13.6rem;
+	height: 2rem;
+	border-radius: 0.307rem;
+	border: 0.819px solid var(--gray-300, #d1d5db);
+	background: var(--white, #fff);
+	box-shadow: 0px 0.819px 1.637px 0px rgba(0, 0, 0, 0.05);
+	font-family: "Karla", sans-serif;
+	text-indent: 0.3rem;
+}
+
+.Meme-submit-button {
+	grid-area: 2/1/3/3;
+	width: 29.8125rem;
+	height: 2.5rem;
+	flex-shrink: 0;
+	border-radius: 0.3125rem;
+	background: linear-gradient(90deg, #711f8d 1.14%, #a818da 100%);
+	color: #fff;
+	font-family: Karla;
+	font-size: 1rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -1px;
+	border: none;
+}
+
+.memeImage {
+	margin-top: 0.2rem;
+	width: 29.8125rem;
+	height: 16.75rem;
+	flex-shrink: 0;
+	border-radius: 0.125rem;
+}
