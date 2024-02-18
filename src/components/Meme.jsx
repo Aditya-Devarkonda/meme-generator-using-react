@@ -5,10 +5,10 @@ export function Meme() {
 		topText: "",
 		bottomText: "",
 		memeUrl: "",
-		prevMemeUrl: "",
 	});
 
 	const [memeArray, setMemeArray] = React.useState([]);
+	const [randomNumberArray, setRandomNumberArray] = React.useState([0]);
 
 	React.useEffect(() => {
 		fetch("https://api.imgflip.com/get_memes")
@@ -16,24 +16,32 @@ export function Meme() {
 			.then((data) => setMemeArray(() => data.data.memes));
 	}, []);
 
-	function getRandomMemeImage() {
+	function addnewRandomNumberToArray() {
 		const number = Math.floor(Math.random() * memeArray.length);
-		const imgUrl = memeArray[number].url;
-		setInputData((prevData)=>({
-			...prevData,
-			prevMemeUrl: inputData.memeUrl
-		}))
+		setRandomNumberArray((prevdata) => {
+			const updatedArray = [...prevdata, number];
+			addUrlToInputData(updatedArray);
+			return updatedArray;
+		});
+	}
+
+	function addUrlToInputData(updatedRandomNumberArray) {
+		if(updatedRandomNumberArray<1){
+			return
+		}
+		const imgUrl = memeArray[updatedRandomNumberArray[updatedRandomNumberArray.length - 1]].url;
 		setInputData((prevdata) => ({
 			...prevdata,
 			memeUrl: imgUrl,
 		}));
 	}
 
-	function getPreviousMemeImage() {
-		setInputData((prevdata) => ({
-			...prevdata,
-			memeUrl: inputData.prevMemeUrl,
-		}));
+	function removeLastRandomNumberfromArray() {
+		setRandomNumberArray((prevRandomArray) => {
+			const updatedArray = prevRandomArray.slice(0, -1);
+			addUrlToInputData(updatedArray);
+			return updatedArray;
+		});
 	}
 
 	function handleInputChnage(event) {
@@ -75,10 +83,10 @@ export function Meme() {
 						value={inputData.bottomText}
 					/>
 				</div>
-				<button className="Meme-new button" onClick={getRandomMemeImage}>
+				<button className="Meme-new button" onClick={addnewRandomNumberToArray}>
 					Get a new meme image 🖼
 				</button>
-				<button className="Meme-prev button" onClick={getPreviousMemeImage}>
+				<button className="Meme-prev button" onClick={removeLastRandomNumberfromArray}>
 					Previous meme image
 				</button>
 			</div>
