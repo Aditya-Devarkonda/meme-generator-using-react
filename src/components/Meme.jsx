@@ -5,6 +5,7 @@ export function Meme() {
 		topText: "",
 		bottomText: "",
 		memeUrl: "",
+		prevMemeUrl: "",
 	});
 
 	const [memeArray, setMemeArray] = React.useState([]);
@@ -18,9 +19,20 @@ export function Meme() {
 	function getRandomMemeImage() {
 		const number = Math.floor(Math.random() * memeArray.length);
 		const imgUrl = memeArray[number].url;
+		setInputData((prevData)=>({
+			...prevData,
+			prevMemeUrl: inputData.memeUrl
+		}))
 		setInputData((prevdata) => ({
 			...prevdata,
 			memeUrl: imgUrl,
+		}));
+	}
+
+	function getPreviousMemeImage() {
+		setInputData((prevdata) => ({
+			...prevdata,
+			memeUrl: inputData.prevMemeUrl,
 		}));
 	}
 
@@ -63,8 +75,11 @@ export function Meme() {
 						value={inputData.bottomText}
 					/>
 				</div>
-				<button className="Meme-submit-button" onClick={getRandomMemeImage}>
+				<button className="Meme-new button" onClick={getRandomMemeImage}>
 					Get a new meme image 🖼
+				</button>
+				<button className="Meme-prev button" onClick={getPreviousMemeImage}>
+					Previous meme image
 				</button>
 			</div>
 			<div className="memeImageContainer">
