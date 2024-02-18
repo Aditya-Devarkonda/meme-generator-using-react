@@ -26,14 +26,15 @@ export function Meme() {
 	}
 
 	function addUrlToInputData(updatedRandomNumberArray) {
-		if(updatedRandomNumberArray<1){
-			return
+		if (updatedRandomNumberArray < 1) {
+			return;
 		}
 		const imgUrl = memeArray[updatedRandomNumberArray[updatedRandomNumberArray.length - 1]].url;
 		setInputData((prevdata) => ({
 			...prevdata,
 			memeUrl: imgUrl,
 		}));
+		console.log(randomNumberArray);
 	}
 
 	function removeLastRandomNumberfromArray() {
@@ -84,7 +85,7 @@ export function Meme() {
 					/>
 				</div>
 				<button className="Meme-new button" onClick={addnewRandomNumberToArray}>
-					Get a new meme image 🖼
+					Click for RANDOM meme image 🖼
 				</button>
 				<button className="Meme-prev button" onClick={removeLastRandomNumberfromArray}>
 					Previous meme image
