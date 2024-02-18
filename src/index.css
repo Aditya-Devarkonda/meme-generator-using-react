@@ -63,7 +63,7 @@ nav {
 	grid-template-columns: 1fr 1fr;
 	grid-row-gap: 1.5rem;
 	grid-column-gap: 2rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 .Meme-left-lebel,
@@ -149,4 +149,20 @@ nav {
 
 .top {
 	top: 0;
+}
+
+.Meme-share {
+	margin-top: 10px;
+	height: 2.3rem;
+	width: 80%;
+	border-radius: 0.3125rem;
+	background: linear-gradient(90deg, #711f8d 1.14%, #a818da 100%);
+	color: #fff;
+	font-family: Karla;
+	font-size: 1.2rem;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -1px;
+	border: none;
 }
